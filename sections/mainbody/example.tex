@@ -1,0 +1,65 @@
+\subsection{An example in Cypher}
+Neo4j does not use standard SQL for interacting with the database. Instead it uses a query-language called Cypher. Cypher is a declarative language that has a similar syntax to SQL. Because Cypher is used when interacting with graph databases it offers some functionality not found in SQL. A node in Cypher are expressed within parenthesis and a relation is expressed within square brackets. Here is an example query in Cypher: 
+\begin{sqlCode}
+MATCH (keanu:Person {name:'Keanu Reeves'})
+RETURN keanu.name AS name, keanu.born AS born
+\end{sqlCode}
+Here we query the database after a node that has the property name 'Keanu Reeves', if we find such a node we return a table with that nodes \texttt{name} and \texttt{born} properties. \textbf{Insert table here???} Here is a SQL query that would return a similar table from a relational database:
+\begin{sqlCode}
+SELECT 
+    name AS name, 
+    born AS born
+FROM 
+    Person
+WHERE 
+    name = 'Keanu Reeves';
+\end{sqlCode}
+
+For simple queries as the ones above there are little to no difference between Cypher and SQL. However some kind of queries are better suited for graph databases. Such queries are for example when the information that we want to find out is not necessarily structured inside the database. Let us look at an example, here is a query that finds if there is any direct or indirect relation between two actors and returns the shortest path if such a relation exist:
+
+\begin{sqlCode}
+MATCH p=shortestPath(
+(:Person {name:"Keanu Reeves"})-[*]-(:Person{name:"Tom Hanks"})
+) RETURN p
+\end{sqlCode}
+
+The query above can be read as; find the shortest path between the node with the name property "Keanu Reeves" and a the node with the name property "Tom Hanks". The inner query returns all relation of any length between the two nodes and the function \texttt{shortestPath()} returns the shortest relation between them. The \texttt{-[*]-} between the two nodes matches all direct and indirect relations between them. \textbf{Insert table here???} An similar query in SQL could be constructed the following way:
+\begin{sqlCode}
+WITH RECURSIVE ShortestPath AS (
+  SELECT
+    id,
+    name,
+    ARRAY[id] AS path,
+    0 AS depth
+  FROM
+    people
+  WHERE
+    name = 'Keanu Reeves'
+
+  UNION ALL
+
+  SELECT
+    p.id,
+    p.name,
+    sp.path || p.id,
+    sp.depth + 1
+  FROM
+    ShortestPath sp
+  JOIN
+    relationships r ON sp.id = r.person1_id
+  JOIN
+    people p ON r.person2_id = p.id
+  WHERE
+    NOT p.id = ANY(sp.path) 
+)
+SELECT *
+FROM ShortestPath
+WHERE name = 'Tom Hanks'
+ORDER BY depth
+LIMIT 1;
+
+\end{sqlCode}
+In this query we have to use a recursive common table expression in order to achieve the same functionality as in the Cypher query. The difference in length between the two queries shows the difference in complexity. Queries of this nature is where graph databases are more appropriate to use rather than relational databases. The specifics of the database that is being queried and how much data that is in said database does impact the efficiency of the queries.
+
+
+

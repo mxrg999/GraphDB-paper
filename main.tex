@@ -4,6 +4,21 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{hyperref}
+\usepackage{listings} % Required for typesetting code
+
+\lstnewenvironment{sqlCode}
+    {\lstset{language=SQL, % Set language to SQL
+             basicstyle=\ttfamily, % Use typewriter font
+             keywordstyle=\bfseries, % Use bold for keywords
+             commentstyle=\itshape, % Use italics for comments
+             columns=fullflexible, % Allow flexible column formatting
+             flexiblecolumns=true, % Enable flexible column formatting
+             showstringspaces=false, % Don't show spaces in strings
+            % frame=single, % Draw a frame around the code
+            % rulecolor=\color{gray}, % Set the frame color to grey
+             }}
+    {}
+
 
 % Document metadata
 \title{Graph Databases: A Comparative Study with Relational Models}
