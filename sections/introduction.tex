@@ -1,26 +1,17 @@
-% Introducing the concept of graph databases, 
+The landscape of database technologies has evolved significantly over the past few decades. Traditionally, relational databases, based on the relational model introduced by E.F. Codd in the 1970s, have been the cornerstone of data storage and management. These databases organize data into tables with predefined schemas, making them suitable for structured data and transactional applications. However, the rise of web-scale applications, social networks, and big data has exposed the limitations of relational databases in handling highly interconnected and dynamic data.
 
-% \subsection{Introduction}
-Because of their efficiency in managing complex and interconnected data, graph databases have garnered attention in recent years. Unlike traditional relational databases, graph databases are more flexible and can store data in a more natural way. A graph database is a database that is grounded on a graph data structure. The data is stored in the form of nodes, edges, and relationships. Nodes represent entities, edges represent relationships between entities, and relationships are the properties of the edges. Having a graph data structure allows for the storage of associative and not indexed data. This allows for fast retrieval of data and efficient management of complex and interconnected data structures. Graph databases are designed to handle the intricacies of large-scale connections and are particularly useful for applications that require complex relationships between entities. Examples of applications where graph databases shine include social networks, recommendation systems, and fraud detection systems. 
-The purpose of this paper is to compare graph databases with traditional relational databases. This paper is structured as follows: Section 2 provides an overview of graph databases. Section 3 discusses the differences between graph databases and relational databases. Section 4 provides an example showing the differences between the query languages used in graph databases and relational databases. Section 5 concludes the paper and discusses future work.
+Graph databases have emerged as a powerful alternative to relational databases for managing complex and interconnected datasets. Unlike relational databases, graph databases model data as nodes (entities) and edges (relationships), allowing for more natural and flexible data representation. This approach is particularly effective for applications that require traversing relationships, such as social networks, recommendation systems, and fraud detection.
 
+Despite the growing interest in graph databases, there is still a need for a comprehensive comparison with traditional relational databases to understand their respective strengths and limitations. Developers and data scientists often face challenges in selecting the appropriate database technology for their specific needs, especially when dealing with complex data structures and relationships.
 
-
-% What is a graph DB?
-% Grounded on a graph data structure
-% stored associative and not indexed
-% Cypher and SQL (some knowladge expected)
-% structure of paper
-
-% Real-world application examples where graph databases shine 
-%   (e.g., social networks, recommendation systems).
-
-% Compare it to relational databases, tables vs graphs, show an image of a table and a graph
+The primary objective of this paper is to provide a comparative study between graph databases and relational databases. Using Neo4j as a representative of graph databases and PostgreSQL as a representative of relational databases, we aim to evaluate their performance, efficiency, and suitability for different types of applications.
 
 
-% We do this by first going into different types of graph databases in section(2.1), then discussing the paradigm differences between graph databases and relational databases in section(2.2). We then provide an example showing the differences between the query languages used in graph databases and relational databases in section(2.3), and compare the differences in how they store the data. Finally, we conclude with a discussion on when graph or relational databases are the most useful technology in section(3.1).
-
-
-
-
-% four classifications of NoSQL databases, the other three being key-value, document, and column-oriented databases. 
+This paper is structured as follows:
+\begin{itemize}
+    \item \textbf{Section 2:} An overview of graph databases, including their types and unique characteristics.
+    \item \textbf{Section 3:} A detailed comparison between graph databases and relational databases, focusing on paradigm differences, query languages, and data modeling.
+    \item \textbf{Section 4:} Discussion of related work, highlighting existing research and studies on this topic.
+    \item \textbf{Section 5:} A discussion summarizing the key findings in the comparative study.
+    \item \textbf{Section 6:} Conclusions and suggestions for future work.
+\end{itemize}
