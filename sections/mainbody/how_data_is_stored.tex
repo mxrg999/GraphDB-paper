@@ -1,0 +1,7 @@
+\subsection{How data is stored in relational data bases and in graph databases}
+Add motivation here!!!!
+In traditional relational databases data is stored using a data structure called B-tree. A B-tree is a tree were each node consists of a specified maximum number of element and a minimum of half the full capacity. In other words if $x$ is the maximum number of elements in a node the minimum number of element in any given node is $x/2$. This property holds for every node in the tree except for the root node, because the tree can contain less elements than $x/2$. Traversing a tree is a fast operation of logarithmic complexity and this is the reason why B-trees are used in relational databases. 
+
+Neo4J uses natives graph storage which provides the freedom to manage and store data in a highly disciplined manner.[69102]  
+
+In graph databases the possibility of high inter-connectivity of the nodes leads to that the nodes and the relationships are stored using pointers that points to related nodes and relationships. The nodes contains pointers to it's relationships and relationships contains pointers to it's corresponding nodes. 
