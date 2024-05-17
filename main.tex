@@ -5,6 +5,7 @@
 \usepackage{amsmath}
 \usepackage{hyperref}
 \usepackage{listings} % Required for typesetting code
+\usepackage{titling}  % For customizing the title
 
 \lstnewenvironment{sqlCode}
     {\lstset{language=SQL, % Set language to SQL
@@ -20,13 +21,20 @@
     {}
 
 
-% Document metadata
+% Set the title
 \title{Graph Databases: A Comparative Study with Relational Models}
-\author{Max Eric}
+\author{
+  Max Rydberg, Erik Björnlinger \\
+  \texttt{gusrydmaac@student.gu.se, guseribj@student.gu.se} \\
+  Computer Science Department, University of Gothenburg 
+}
 \date{\today}
 
+
+% Begin the document
 \begin{document}
 
+% \input{sections/titlepage.tex}
 \maketitle
 
 \begin{abstract}
