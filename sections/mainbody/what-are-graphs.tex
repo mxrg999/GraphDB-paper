@@ -14,7 +14,7 @@ Graph databases can be implemented using different underlying concepts for repre
 Both RDF and LPG has a graph as it's underlying concept but differs in how the data is stored in the graph. RDF use a triple of a subject, predicate and object, all encapsulated in URLs as their underlying data structure. 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.5\textwidth]{assets/lpg.png}
+  \includegraphics[width=0.5\textwidth]{assets/RDF-example.png}
   \caption{A simple RDF structure}
 \end{figure}
 The subject is the resource that is being described, the predicate is a property or characteristics of the subject and the object is the value of the property. Because all data is encapsulated in URLs RDF is useful when the represented data is already in the form of an URL. Meaning that when the data is in the web an RDF database could be useful. The subject, the predicate and the value does not have attributes or associated key value pairs. In order to add information about the relationships the subject in a triple of subject, predicate and object, has to be a triple itself. 
@@ -22,7 +22,7 @@ The subject is the resource that is being described, the predicate is a property
 In LPG the data is represented in the nodes and the edges between the nodes. The entities, or nouns, are represented as nodes and the relationships between the entities are represented in the edges. 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.5\textwidth]{assets/lpg.png}
+  \includegraphics[width=0.5\textwidth]{assets/LPG-example.png}
   \caption{A simple LPG structure}
 \end{figure}
 Both the nodes and the edges can be labeled with attributes about the entity or the relationship. Attributes are specified in a key value structure. An attributes about a relationship between two entities is therefore specified in the relation itself. Neo4j is a graph database that has LPG as it's underlying concept.
