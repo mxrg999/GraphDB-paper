@@ -36,7 +36,7 @@ MATCH p=shortestPath(
 ) RETURN p
 \end{sqlCode}
 
-The query above can be read as; find the shortest path between the node with the name property "Keanu Reeves" and a the node with the name property "Tom Hanks". The inner query returns all relation of any length between the two nodes and the function \texttt{shortestPath()} returns the shortest relation between them. The \texttt{-[*]-} between the two nodes matches all direct and indirect relations between them. An similar query in SQL could be constructed the following way:
+The query above can be read as; find the shortest path between the node with the name property "Keanu Reeves" and the node with the name property "Tom Hanks". The inner query returns all relation of any length between the two nodes and the function \texttt{shortestPath()} returns the shortest relation between them. The \texttt{-[*]-} between the two nodes matches all direct and indirect relations between them. An similar query in SQL could be constructed the following way:
 \begin{sqlCode}
 WITH RECURSIVE ShortestPath AS (
 SELECT
